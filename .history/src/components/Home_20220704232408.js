@@ -29,7 +29,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div><MTStudet/></div>
+      <div><MTStudet</div>
     </>
   );
 };
