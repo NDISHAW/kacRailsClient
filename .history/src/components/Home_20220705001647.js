@@ -8,9 +8,7 @@ export default function Home(){
  
   return (
     <>
-    <div style={{ width: "800px", display: "flex" }}>
-      <Navbar />
-    </div>
+    
       <div style={{ width: "400px", display: "flex" }}>
 
         <Table>

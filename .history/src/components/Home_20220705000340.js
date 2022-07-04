@@ -1,22 +1,21 @@
 import React from "react";
 import {Table } from "react-bootstrap";
 import MTStudet from "./MTStudet";
-import Navbar from "./Navbar"
 
-export default function Home(){
+const Home = () => {
 
- 
+  };
   return (
     <>
-    <div style={{ width: "800px", display: "flex" }}>
-      <Navbar />
-    </div>
       <div style={{ width: "400px", display: "flex" }}>
+        <div>
 
-        <Table>
-          <MTStudet />
-        </Table>
+        </div>
       </div>
+      <Table>
+        <MTStudet />
+      </Table>
     </>
   );
- };
+
+export default Home;
