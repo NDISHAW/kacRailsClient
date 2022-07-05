@@ -8,7 +8,6 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import Employee from "./components/school/Employee";
 import MTStudet from "./components/school/MTStudet";
-import Parents from "./components/school/Parents"
 
 function App() {
   return (
@@ -32,7 +31,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/MTStudet" element={<MTStudet />} />
               <Route path="/Employee" element={<Employee />} />
-              <Route path="/parents" element={<Parents />} />parents
+              <Route path="/Parents" element={<Parents />} />Parents
             </Routes>
           </UserAuthContextProvider>
         </Col>

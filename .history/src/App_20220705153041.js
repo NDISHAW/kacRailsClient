@@ -32,7 +32,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/MTStudet" element={<MTStudet />} />
               <Route path="/Employee" element={<Employee />} />
-              <Route path="/parents" element={<Parents />} />parents
+              <Route path="/parents" element={<parents />} />parents
             </Routes>
           </UserAuthContextProvider>
         </Col>
