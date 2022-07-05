@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import MaterialTable from 'material-table'
-import Navbar from '../Navbar';
 
 
 function MTStudet() {
@@ -13,7 +12,7 @@ function MTStudet() {
 
   const getStudents = () => {
     fetch(url).then(resp => resp.json())
-      .then(resp => setData(resp))
+      .then(resp => console.log(resp);)
   }
   const columns = [
     {
@@ -57,7 +56,7 @@ function MTStudet() {
   ];
   return (
     <div className="App">
-      <Navbar />
+      <MTStudet />
       {/* <h1 align="center">STUDENTS TABLE</h1> */}
       {/* <h4 align='center'>CRUD operation with Json-Server (with Validation) in Material Table</h4> */}
       <MaterialTable

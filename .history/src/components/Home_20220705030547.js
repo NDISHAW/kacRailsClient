@@ -6,10 +6,15 @@ import MTStudet from "./school/MTStudet";
 
 export default function Home() {
   return (
-    <div className="App">
+    <div className="App" >
       <div style={{ width: "100%", display: "flex" }}>
-        <MTStudet />
+        <Navbar />
       </div>
+      {/* <div style={{ width: "100%", display: "flex" }}>
+        <Table>
+          <MTStudet />
+        </Table>
+      </div> */}
     </div>
   );
 }

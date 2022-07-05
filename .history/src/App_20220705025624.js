@@ -21,8 +21,6 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <Home />
-                    {/* <MTStudet /> */}
-                    {/* <Employee /> */}
                   </ProtectedRoute>
                 }
               />

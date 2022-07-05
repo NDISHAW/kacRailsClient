@@ -21,16 +21,16 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <Home />
-                    {/* <MTStudet /> */}
-                    {/* <Employee /> */}
+                    <MTStudet />
+                    <Employee />
                   </ProtectedRoute>
                 }
               />
               <Route path="/" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/home" element={<Home />} />
+              {/* <Route path="/home" element={<Home />} />
               <Route path="/MTStudet" element={<MTStudet />} />
-              <Route path="/Employee" element={<Employee />} />
+              <Route path="/Employee" element={<Employee />} /> */}
             </Routes>
           </UserAuthContextProvider>
         </Col>

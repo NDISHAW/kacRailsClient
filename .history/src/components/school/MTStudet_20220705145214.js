@@ -13,7 +13,7 @@ function MTStudet() {
 
   const getStudents = () => {
     fetch(url).then(resp => resp.json())
-      .then(resp => setData(resp))
+      .then(resp => console.log(resp))
   }
   const columns = [
     {

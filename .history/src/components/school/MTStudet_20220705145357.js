@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import MaterialTable from 'material-table'
-import Navbar from '../Navbar';
 
 
 function MTStudet() {
@@ -57,7 +56,7 @@ function MTStudet() {
   ];
   return (
     <div className="App">
-      <Navbar />
+      <Na />
       {/* <h1 align="center">STUDENTS TABLE</h1> */}
       {/* <h4 align='center'>CRUD operation with Json-Server (with Validation) in Material Table</h4> */}
       <MaterialTable

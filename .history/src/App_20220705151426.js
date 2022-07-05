@@ -6,7 +6,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
-import Employee from "./components/school/Employee";
+// import Employee from "./components/school/Employee";
 import MTStudet from "./components/school/MTStudet";
 
 function App() {

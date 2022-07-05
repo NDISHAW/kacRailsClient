@@ -16,13 +16,13 @@ function App() {
         <Col>
           <UserAuthContextProvider>
             <Routes>
-              <Route
+              {/* <Route
                 path="/home"
                 element={
                   <ProtectedRoute>
                     <Home />
-                    {/* <MTStudet /> */}
-                    {/* <Employee /> */}
+                    <MTStudet />
+                    <Employee />
                   </ProtectedRoute>
                 }
               />
@@ -30,7 +30,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/home" element={<Home />} />
               <Route path="/MTStudet" element={<MTStudet />} />
-              <Route path="/Employee" element={<Employee />} />
+              <Route path="/Employee" element={<Employee />} /> */}
             </Routes>
           </UserAuthContextProvider>
         </Col>

@@ -6,7 +6,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
-import Employee from "./components/school/Employee";
+// import Employee from "./components/school/Employee";
 import MTStudet from "./components/school/MTStudet";
 
 function App() {
@@ -21,16 +21,16 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <Home />
-                    {/* <MTStudet /> */}
+                    <MTStudet />
                     {/* <Employee /> */}
                   </ProtectedRoute>
                 }
               />
               <Route path="/" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/home" element={<Home />} />
+              {/* <Route path="/home" element={<Home />} />
               <Route path="/MTStudet" element={<MTStudet />} />
-              <Route path="/Employee" element={<Employee />} />
+              <Route path="/Employee" element={<Employee />} /> */}
             </Routes>
           </UserAuthContextProvider>
         </Col>

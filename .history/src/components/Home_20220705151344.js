@@ -1,8 +1,8 @@
 import React from "react";
 // import { Table } from "react-bootstrap";
-import MTStudet from "./school/MTStudet";
+// import MTStudet from "./school/MTStudet";
 // import Navbar from "./Navbar";
-// import Employee from "./school/Employee";
+import Employee from "./school/Employee";
 
 export default function Home() {
   return (
