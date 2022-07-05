@@ -57,7 +57,7 @@ function MTStudet() {
   ];
   return (
     <div >
-      <div className="App">
+      <div style={{ width: "100%", display: "flex" }}>
         <div><Navbar /></div>
         {/* <h1 align="center">STUDENTS TABLE</h1> */}
         {/* <h4 align='center'>CRUD operation with Json-Server (with Validation) in Material Table</h4> */}

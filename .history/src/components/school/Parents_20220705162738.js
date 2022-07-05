@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from "react";
 import MaterialTable from "material-table";
 import Navbar from "../Navbar";
+import "../App.css" src/App.css
 
 function Employee() {
   const [data, setData] = useState([]);
-  const url = "https://michegwwe.herokuapp.com/employees";
+  const url = "https://michegwwe.herokuapp.com/parents";
   useEffect(() => {
-    getEmployees();
+    getParents();
   }, []);
 
-  const getEmployees = () => {
+  const getParents = () => {
     fetch(url)
       .then((resp) => resp.json())
       .then((resp) => setData(resp));
   };
   const columns = [
+    {
+      title: "admision_number",
+      field: "admision_number",
+      validate: (rowData) =>
+        rowData.admision_number === undefined || rowData.admision_number === "" ? "Required" : true,
+    },
     {
       title: "id",
       field: "id",
@@ -24,42 +31,98 @@ function Employee() {
           : true,
     },
     {
-      title: "NAMES",
-      field: "full_names",
+      title: "fathers_full_names",
+      field: "fathers_full_names",
       validate: (rowData) =>
-        rowData.full_names === undefined || rowData.full_names === ""
+        rowData.fathers_full_names === undefined ||
+        rowData.fathers_full_names === ""
           ? "Required"
           : true,
     },
     {
-      title: "role",
-      field: "role",
+      title: "fathers_contacts",
+      field: "fathers_contacts",
       validate: (rowData) =>
-        rowData.role === undefined || rowData.role === "" ? "Required" : true,
-    },
-    {
-      title: "National Id_Number",
-      field: "id_number",
-      validate: (rowData) =>
-        rowData.id_number === undefined || rowData.id_number === ""
+        rowData.fathers_contacts === undefined ||
+        rowData.fathers_contacts === ""
           ? "Required"
           : true,
     },
     {
-      title: "salary",
-      field: "salary",
+      title: "fathers_email",
+      field: "fathers_email",
       validate: (rowData) =>
-        rowData.salary === undefined || rowData.salary === "" ? "Required" : true,
+        rowData.fathers_email === undefined || rowData.fathers_email === ""
+          ? "Required"
+          : true,
+    },
+    {
+      title: "fathers_id_no",
+      field: "fathers_id_no",
+      validate: (rowData) =>
+        rowData.fathers_id_no === undefined || rowData.fathers_id_no === ""
+          ? "Required"
+          : true,
+    },
+    {
+      title: "mothers_full_names",
+      field: "mothers_full_names",
+      validate: (rowData) =>
+        rowData.mothers_full_names === undefined ||
+        rowData.mothers_full_names === ""
+          ? "Required"
+          : true,
+    },
+    {
+      title: "mothers_contacts",
+      field: "mothers_contacts",
+      validate: (rowData) =>
+        rowData.mothers_contacts === undefined ||
+        rowData.mothers_contacts === ""
+          ? "Required"
+          : true,
+    },
+    {
+      title: "mothers_email",
+      field: "mothers_email",
+      validate: (rowData) =>
+        rowData.mothers_email === undefined || rowData.mothers_email === ""
+          ? "Required"
+          : true,
+    },
+    {
+      title: "mothers_id_no",
+      field: "mothers_id_no",
+      validate: (rowData) =>
+        rowData.mothers_id_no === undefined || rowData.mothers_id_no === ""
+          ? "Required"
+          : true,
+    },
+    {
+      title: "address",
+      field: "address",
+      validate: (rowData) =>
+        rowData.address === undefined || rowData.address === ""
+          ? "Required"
+          : true,
+    },
+    {
+      title: "nationality",
+      field: "nationality",
+      validate: (rowData) =>
+        rowData.nationality === undefined || rowData.nationality === ""
+          ? "Required"
+          : true,
     },
   ];
   return (
-    <div>
-      <div className="App">
+    <div className="body">
+      <div className="">
         <Navbar />
         {/* <h1 align="center">STUDENTS TABLE</h1> */}
         {/* <h4 align='center'>CRUD operation with Json-Server (with Validation) in Material Table</h4> */}
         <MaterialTable
-          title="Employee Table"
+          title="Parents Table"
           columns={columns}
           data={data}
           options={{ actionsColumnIndex: -1, addRowPosition: "first" }}
@@ -76,7 +139,7 @@ function Employee() {
                 })
                   .then((resp) => resp.json())
                   .then((resp) => {
-                    getEmployees();
+                    getParents();
                     resolve();
                   });
               }),
@@ -92,7 +155,7 @@ function Employee() {
                 })
                   .then((resp) => resp.json())
                   .then((resp) => {
-                    getEmployees();
+                    getParents();
                     resolve();
                   });
               }),
@@ -107,7 +170,7 @@ function Employee() {
                 })
                   .then((resp) => resp.json())
                   .then((resp) => {
-                    getEmployees();
+                    getParents();
                     resolve();
                   });
               }),

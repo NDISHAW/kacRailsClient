@@ -1,37 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import MaterialTable from "material-table";
+import Navbar from "../Navbar";
 
-import MaterialTable from 'material-table'
-import Navbar from '../Navbar';
-
-
-function MTStudet() {
-  const url = "https://michegwwe.herokuapp.com/students";
-  const [data, setData] = useState([])
+function Employee() {
+  const [data, setData] = useState([]);
+  const url = "https://michegwwe.herokuapp.com/employees";
   useEffect(() => {
-    getStudents()
-  }, [])
+    getEmployees();
+  }, []);
 
-  const getStudents = () => {
-    fetch(url).then(resp => resp.json())
-      .then(resp => setData(resp))
-  }
+  const getEmployees = () => {
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((resp) => setData(resp));
+  };
   const columns = [
-    {
-      title: "admision_number",
-      field: "admision_number",
-      validate: (rowData) =>
-        rowData.admision_number === undefined || rowData.admision_number === ""
-          ? "Required"
-          : true,
-    },
-    {
-      title: "NAMES",
-      field: "Full_names",
-      validate: (rowData) =>
-        rowData.Full_names === undefined || rowData.Full_names === ""
-          ? "Required"
-          : true,
-    },
     {
       title: "id",
       field: "id",
@@ -41,28 +24,42 @@ function MTStudet() {
           : true,
     },
     {
-      title: "date_of_birth",
-      field: "date_of_birth",
+      title: "NAMES",
+      field: "full_names",
       validate: (rowData) =>
-        rowData.date_of_birth === undefined || rowData.date_of_birth === ""
+        rowData.full_names === undefined || rowData.full_names === ""
           ? "Required"
           : true,
     },
     {
-      title: "level",
-      field: "level",
+      title: "role",
+      field: "role",
       validate: (rowData) =>
-        rowData.level === undefined || rowData.level === "" ? "Required" : true,
+        rowData.role === undefined || rowData.role === "" ? "Required" : true,
+    },
+    {
+      title: "National Id_Number",
+      field: "id_number",
+      validate: (rowData) =>
+        rowData.id_number === undefined || rowData.id_number === ""
+          ? "Required"
+          : true,
+    },
+    {
+      title: "salary",
+      field: "salary",
+      validate: (rowData) =>
+        rowData.salary === undefined || rowData.salary === "" ? "Required" : true,
     },
   ];
   return (
-    <div >
+    <div>
       <div className="App">
-        <div><Navbar /></div>
+        
         {/* <h1 align="center">STUDENTS TABLE</h1> */}
         {/* <h4 align='center'>CRUD operation with Json-Server (with Validation) in Material Table</h4> */}
         <MaterialTable
-          title="Student Table"
+          title="Employee Table"
           columns={columns}
           data={data}
           options={{ actionsColumnIndex: -1, addRowPosition: "first" }}
@@ -79,14 +76,14 @@ function MTStudet() {
                 })
                   .then((resp) => resp.json())
                   .then((resp) => {
-                    getStudents();
+                    getEmployees();
                     resolve();
                   });
               }),
             onRowUpdate: (newData, oldData) =>
               new Promise((resolve, reject) => {
                 //Backend call
-                fetch(url + "/" + oldData.admision_number, {
+                fetch(url + "/" + oldData.employee_no, {
                   method: "PATCH",
                   headers: {
                     "Content-type": "application/json",
@@ -95,14 +92,14 @@ function MTStudet() {
                 })
                   .then((resp) => resp.json())
                   .then((resp) => {
-                    getStudents();
+                    getEmployees();
                     resolve();
                   });
               }),
             onRowDelete: (oldData) =>
               new Promise((resolve, reject) => {
                 //Backend call
-                fetch(url + "/" + oldData.admision_number, {
+                fetch(url + "/" + oldData.employee_no, {
                   method: "DELETE",
                   headers: {
                     "Content-type": "application/json",
@@ -110,7 +107,7 @@ function MTStudet() {
                 })
                   .then((resp) => resp.json())
                   .then((resp) => {
-                    getStudents();
+                    getEmployees();
                     resolve();
                   });
               }),
@@ -121,5 +118,4 @@ function MTStudet() {
   );
 }
 
-export default MTStudet;
-
+export default Employee;
