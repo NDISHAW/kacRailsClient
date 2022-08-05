@@ -5,7 +5,7 @@ import MaterialTable from 'material-table'
 
 function MTStudet() {
   const header = new Headers({ "Access-Control-Allow-Origin": "*" });
-  const url = "http://localhost:3000/students";
+  const url = "/stuents";
   const [data, setData] = useState([]);
   useEffect(() => {
     getStudents();

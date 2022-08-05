@@ -26,7 +26,7 @@ export const fetchCurrentUser = () => {
 export const logInUser = (userInfo) => {
 	return (dispatch) => {
 		dispatch({ type: "LOGGING_IN", userInfo });
-		fetch("http://localhost:3003/login", {
+		fetch("http://localhost:300/login", {
 		// fetch("https://my-travelogue.herokuapp.com/login", {
 			method: "POST",
 			headers: {
@@ -77,7 +77,7 @@ export const createUser = (userInfo) => {
 					localStorage.setItem("user", JSON.stringify(data.user));
 					localStorage.setItem("token", data.jwt);
 					dispatch({ type: "SIGNUP_SUCCESS", data });
-					window.history.pushState(data.user, "", "/dashboard");
+					window.history.pushState(data.user, "", "/Home");
 					dispatch({ type: "REFRESH_DASHBOARD", data });
 				}
 			});
