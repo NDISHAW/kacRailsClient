@@ -33,7 +33,8 @@ class App extends Component {
               {/* <Route path="/signup" element={<Signup />} /> */}
               <Route path="/home" element={<Home />} />
               <Route path="/MTStudet" element={<MTStudet />} />
-
+              {/* <Route path="/Employee" element={<Employee />} />
+             <Route path="/parents" element={<Parents />} />parents */}
             </Routes>
           </div>
         </ThemeProvider>
