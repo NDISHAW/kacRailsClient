@@ -120,16 +120,12 @@ function MTStudet() {
             onRowDelete: (oldData) =>
               new Promise((resolve, reject) => {
                 //Backend call
-                fetch(
-                  url + "/" + oldData.id,
-                  { mode: "no-cors" },
-                  {
-                    method: "DELETE",
-                    headers: {
-                      "Content-type": "application/json",
-                    },
-                  }
-                )
+                fetch(url + "/" + oldData.id, {
+                  method: "DELETE",
+                  headers: {
+                    "Content-type": "application/json",
+                  },
+                })
                   .then((resp) => resp.json())
                   .then((resp) => {
                     getStudents();
