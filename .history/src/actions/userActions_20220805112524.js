@@ -1,28 +1,25 @@
 export const fetchCurrentUser = () => {
 	return (dispatch) => {
-		return fetch(
-      "https://kac-rails-client-9q83p2x50-ndishaw.vercel.app/authorized",
-      {
-        // return fetch("https://my-travelogue.herokuapp.com/authorized", {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization: localStorage.token,
-        },
-      }
-    )
-      .then((resp) => {
-        return resp.json();
-      })
-      .then((data) => {
-        if (data.error) {
-          localStorage.removeItem("token");
-          localStorage.removeItem("user");
-        } else {
-          dispatch({ type: "LOGIN_SUCCESS", data });
-          window.history.pushState(data.user, "", "/dashboard");
-        }
-      });
+		return fetch("http://localhost:3000/authorized", {
+		// return fetch("https://my-travelogue.herokuapp.com/authorized", {
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+				Authorization: localStorage.token
+			}
+		})
+			.then((resp) => {
+				return resp.json();
+			})
+			.then((data) => {
+				if (data.error) {
+					localStorage.removeItem("token");
+					localStorage.removeItem("user");
+				} else {
+					dispatch({ type: "LOGIN_SUCCESS", data });
+					window.history.pushState(data.user, "", "/dashboard");
+				}
+			});
 	};
 };
 

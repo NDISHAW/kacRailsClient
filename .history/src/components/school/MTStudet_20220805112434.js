@@ -5,7 +5,7 @@ import MaterialTable from 'material-table'
 
 function MTStudet() {
   const header = new Headers({ "Access-Control-Allow-Origin": "*" });
-  const url = "https://kac-rails-client-9q83p2x50-ndishaw.vercel.app/students";
+  const url = "ibrahndich@gmail.com/students";
   const [data, setData] = useState([]);
   useEffect(() => {
     getStudents();
