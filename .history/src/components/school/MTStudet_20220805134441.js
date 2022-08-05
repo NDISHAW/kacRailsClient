@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import MaterialTable from 'material-table'
-import Navbar from '../Navbar';
+ import Navbar from '../Navbar';
 
 function MTStudet() {
   const header = new Headers({ "Access-Control-Allow-Origin": "*" });
