@@ -84,7 +84,7 @@ function MTStudet() {
             onRowAdd: (newData) =>
               new Promise((resolve, reject) => {
                 //Backend call
-                fetch(url, { mode: 'no-cors' },{
+                fetch(url, { mode: 'no-cors' }{
                   method: "PATCH",
                   headers: {
                     accept: "application/json",
