@@ -26,7 +26,7 @@ export const fetchCurrentUser = () => {
 export const logInUser = (userInfo) => {
 	return (dispatch) => {
 		dispatch({ type: "LOGGING_IN", userInfo });
-		fetch("http://localhost:3000/login", {
+		fetch("https://kac-rails-client.vercel.app//login", {
 		// fetch("https://my-travelogue.herokuapp.com/login", {
 			method: "POST",
 			headers: {
