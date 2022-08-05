@@ -104,9 +104,8 @@ function MTStudet() {
                   method: "PATCH",
                   headers: {
                     "Content-type": "application/json",
-                    Accept: "application/json",
                   },
-                  body: JSON.parse(newData),
+                  body: JSON.p(newData),
                 })
                   .then((resp) => resp.json())
                   .then((resp) => {
