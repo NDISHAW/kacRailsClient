@@ -1,32 +1,32 @@
 export const fetchCurrentUser = () => {
 	return (dispatch) => {
-		// return fetch("http://localhost:3000/authorized", {
-      return fetch("https://kac-rails-client.vercel.app/authorized", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: localStorage.token,
-      },
-    })
-      .then((resp) => {
-        return resp.json();
-      })
-      .then((data) => {
-        if (data.error) {
-          localStorage.removeItem("token");
-          localStorage.removeItem("user");
-        } else {
-          dispatch({ type: "LOGIN_SUCCESS", data });
-          window.history.pushState(data.user, "", "/dashboard");
-        }
-      });
+		return fetch("http://localhost:3000/authorized", {
+		// return fetch("https://my-travelogue.herokuapp.com/authorized", {
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+				Authorization: localStorage.token
+			}
+		})
+			.then((resp) => {
+				return resp.json();
+			})
+			.then((data) => {
+				if (data.error) {
+					localStorage.removeItem("token");
+					localStorage.removeItem("user");
+				} else {
+					dispatch({ type: "LOGIN_SUCCESS", data });
+					window.history.pushState(data.user, "", "/dashboard");
+				}
+			});
 	};
 };
 
 export const logInUser = (userInfo) => {
 	return (dispatch) => {
 		dispatch({ type: "LOGGING_IN", userInfo });
-		fetch("https://kac-rails-client.vercel.app/login", {
+		fetch("ibrahndich@gmail.com", {
       // fetch("https://my-travelogue.herokuapp.com/login", {
       method: "POST",
       headers: {
@@ -55,8 +55,8 @@ export const logInUser = (userInfo) => {
 export const createUser = (userInfo) => {
 	return (dispatch) => {
 		dispatch({ type: "SIGNING_UP", userInfo });
-		// fetch("http://localhost:3000/signup", {
-		fetch("https://kac-rails-client.vercel.app/signup", {
+		fetch("http://localhost:3000/signup", {
+		// fetch("https://my-travelogue.herokuapp.com/signup", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

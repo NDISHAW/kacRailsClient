@@ -1,7 +1,7 @@
 export const fetchCurrentUser = () => {
 	return (dispatch) => {
-		// return fetch("http://localhost:3000/authorized", {
-      return fetch("https://kac-rails-client.vercel.app/authorized", {
+		return fetch("https://kac-rails-client.vercel.app/authorized", {
+      // return fetch("https://my-travelogue.herokuapp.com/authorized", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -55,8 +55,8 @@ export const logInUser = (userInfo) => {
 export const createUser = (userInfo) => {
 	return (dispatch) => {
 		dispatch({ type: "SIGNING_UP", userInfo });
-		// fetch("http://localhost:3000/signup", {
-		fetch("https://kac-rails-client.vercel.app/signup", {
+		fetch("http://localhost:3000/signup", {
+		// fetch("https://my-travelogue.herokuapp.com/signup", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
