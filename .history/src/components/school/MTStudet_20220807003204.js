@@ -51,9 +51,9 @@ function MTStudet() {
   return (
     <div>
       <div className="App">
-        {/* <div>
+        <div>
           <Navbar />
-        </div> */}
+        </div>
         <MaterialTable
           title="Students Table"
           columns={columns}
