@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.js": "/static/js/main.a90db7ec.chunk.js",
-    "main.js.map": "/static/js/main.a90db7ec.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.c5a15b0a.js",
-    "runtime-main.js.map": "/static/js/runtime-main.c5a15b0a.js.map",
-    "static/js/2.57497891.chunk.js": "/static/js/2.57497891.chunk.js",
-    "static/js/2.57497891.chunk.js.map": "/static/js/2.57497891.chunk.js.map",
+    "main.css": "/static/css/main.047296bd.css",
+    "main.js": "/static/js/main.cb89b677.js",
+    "static/media/Kenia_Shots-41.jpg": "/static/media/Kenia_Shots-41.ebb87ad8fc55edd535c1.jpg",
+    "static/media/Kenia_Shots-23.jpg": "/static/media/Kenia_Shots-23.0b58828cdbb4dca3f4c1.jpg",
+    "static/media/logo.png": "/static/media/logo.3d25eef153a633ac74b6.png",
     "index.html": "/index.html",
-    "static/js/2.57497891.chunk.js.LICENSE.txt": "/static/js/2.57497891.chunk.js.LICENSE.txt"
+    "main.047296bd.css.map": "/static/css/main.047296bd.css.map",
+    "main.cb89b677.js.map": "/static/js/main.cb89b677.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.c5a15b0a.js",
-    "static/js/2.57497891.chunk.js",
-    "static/js/main.a90db7ec.chunk.js"
+    "static/css/main.047296bd.css",
+    "static/js/main.cb89b677.js"
   ]
 }
