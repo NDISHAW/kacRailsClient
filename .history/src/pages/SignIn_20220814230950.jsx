@@ -184,7 +184,20 @@ function SignIn({ setUserLogin }) {
             </div>
           </div>
         </section>
-
+        <div className="flex justify-between">
+          <label
+            className="block text-gray-800 text-sm font-medium mb-1"
+            htmlFor="password"
+          >
+            Password
+          </label>
+          <Link
+            to="reset-password"
+            className="text-sm font-medium text-blue-600 hover:bg-yellow-400"
+          >
+            Having trouble signing in?
+          </Link>
+        </div>
       </main>
     </div>
   );

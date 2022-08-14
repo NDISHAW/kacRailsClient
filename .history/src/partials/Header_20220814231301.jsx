@@ -69,7 +69,7 @@ function Header() {
               </li>
               <li>
                 <Link
-                  to="/dashboard"
+                  to="/dash"
                   className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3"
                 >
                   <span>Sign up</span>
