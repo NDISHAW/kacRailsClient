@@ -22,10 +22,10 @@ export default defineConfig({
     ],
   },
   build: {
-    raw: {
-      extenstions : ['html', 'txt'],
-      glob: ['**.html'] // or glob
-    },
+     raw: {
+       extenstions : ['html', 'txt'],
+       glob: ['**.html'] // or glob
+   }
     commonjsOptions: {
       transformMixedEsModules: true,
     }
