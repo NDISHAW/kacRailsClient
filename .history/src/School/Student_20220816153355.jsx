@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import MaterialTable from "@material-table/core";
 import Container from "@material-ui/core/Container";
-import UserHeader from '../partials/UserHeader';
 
 function Student() {
   // const url = "https://michegwwe.herokuapp.com/students";
@@ -19,10 +18,10 @@ function Student() {
   };
   const columns = [
     {
-      title: "classroom",
-      field: "classroom.name",
+      title: "classroom_id",
+      field: "classroom_id",
       validate: (rowData) =>
-        rowData.classroom.name === undefined || rowData.classroom.name === ""
+        rowData.classroom_id === undefined || rowData.classroom_id === ""
           ? "Required"
           : true,
     },
@@ -41,10 +40,10 @@ function Student() {
         rowData.id === undefined || rowData.id === "" ? "Required" : true,
     },
     {
-      title: "DateOfBirth",
-      field: "DateOfBirth",
+      title: "Date_Of_Birth",
+      field: "date_of_birth",
       validate: (rowData) =>
-        rowData.DateOfBirth === undefined || rowData.DateOfBirth === ""
+        rowData.date_of_birth === undefined || rowData.date_of_birth === ""
           ? "Required"
           : true,
     },
@@ -55,12 +54,9 @@ function Student() {
     //     rowData.level === undefined || rowData.level === "" ? "Required" : true,
     // },
   ];
-
   return (
-    <div className=" app">
-      <UserHeader />
-      <Container>
-      {/* <Container maxWidth="90%"> */}
+    <section className="relative mt-20">
+      <Container maxWidth="90%">
         {/* <h1 align="center">STUDENTS TABLE</h1> */}
         {/* <h4 align='center'>CRUD operation with Json-Server (with Validation) in Material Table</h4> */}
         <MaterialTable
@@ -89,7 +85,7 @@ function Student() {
               new Promise((resolve, reject) => {
                 //Backend call
                 fetch(url + "/" + oldData.id, {
-                  method: "POST",
+                  method: "PATCH",
                   headers: {
                     "Content-type": "application/json",
                   },
@@ -119,7 +115,7 @@ function Student() {
           }}
         />
       </Container>
-    </div>
+    </section>
   );
 }
 

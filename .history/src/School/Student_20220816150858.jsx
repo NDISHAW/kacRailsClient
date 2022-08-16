@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 
 import MaterialTable from "@material-table/core";
 import Container from "@material-ui/core/Container";
-import UserHeader from '../partials/UserHeader';
 
 function Student() {
-  // const url = "https://michegwwe.herokuapp.com/students";
-  const url = "https://kacrailsserver.herokuapp.com/students";
+  const url = "https://michegwwe.herokuapp.com/students";
   const [data, setData] = useState([]);
   useEffect(() => {
     getStudents();
@@ -19,18 +17,18 @@ function Student() {
   };
   const columns = [
     {
-      title: "classroom",
-      field: "classroom.name",
+      title: "admision_number",
+      field: "admision_number",
       validate: (rowData) =>
-        rowData.classroom.name === undefined || rowData.classroom.name === ""
+        rowData.admision_number === undefined || rowData.admision_number === ""
           ? "Required"
           : true,
     },
     {
       title: "NAMES",
-      field: "names",
+      field: "Full_names",
       validate: (rowData) =>
-        rowData.names === undefined || rowData.names === ""
+        rowData.Full_names === undefined || rowData.Full_names === ""
           ? "Required"
           : true,
     },
@@ -41,26 +39,23 @@ function Student() {
         rowData.id === undefined || rowData.id === "" ? "Required" : true,
     },
     {
-      title: "DateOfBirth",
-      field: "DateOfBirth",
+      title: "date_of_birth",
+      field: "date_of_birth",
       validate: (rowData) =>
-        rowData.DateOfBirth === undefined || rowData.DateOfBirth === ""
+        rowData.date_of_birth === undefined || rowData.date_of_birth === ""
           ? "Required"
           : true,
     },
-    // {
-    //   title: "level",
-    //   field: "level",
-    //   validate: (rowData) =>
-    //     rowData.level === undefined || rowData.level === "" ? "Required" : true,
-    // },
+    {
+      title: "level",
+      field: "level",
+      validate: (rowData) =>
+        rowData.level === undefined || rowData.level === "" ? "Required" : true,
+    },
   ];
-
   return (
-    <div className=" app">
-      <UserHeader />
-      <Container>
-      {/* <Container maxWidth="90%"> */}
+    <section className="relative mt-6">
+      <Container maxWidth="90%">
         {/* <h1 align="center">STUDENTS TABLE</h1> */}
         {/* <h4 align='center'>CRUD operation with Json-Server (with Validation) in Material Table</h4> */}
         <MaterialTable
@@ -88,8 +83,8 @@ function Student() {
             onRowUpdate: (newData, oldData) =>
               new Promise((resolve, reject) => {
                 //Backend call
-                fetch(url + "/" + oldData.id, {
-                  method: "POST",
+                fetch(url + "/" + oldData.admision_number, {
+                  method: "PATCH",
                   headers: {
                     "Content-type": "application/json",
                   },
@@ -104,7 +99,7 @@ function Student() {
             onRowDelete: (oldData) =>
               new Promise((resolve, reject) => {
                 //Backend call
-                fetch(url + "/" + oldData.id, {
+                fetch(url + "/" + oldData.admision_number, {
                   method: "DELETE",
                   headers: {
                     "Content-type": "application/json",
@@ -119,7 +114,7 @@ function Student() {
           }}
         />
       </Container>
-    </div>
+    </section>
   );
 }
 

@@ -58,8 +58,7 @@ function Student() {
 
   return (
     <div className=" app">
-      <UserHeader />
-      <Container>
+      
       {/* <Container maxWidth="90%"> */}
         {/* <h1 align="center">STUDENTS TABLE</h1> */}
         {/* <h4 align='center'>CRUD operation with Json-Server (with Validation) in Material Table</h4> */}

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import MaterialTable from "@material-table/core";
 import Container from "@material-ui/core/Container";
-import UserHeader from '../partials/UserHeader';
 
 function Student() {
   // const url = "https://michegwwe.herokuapp.com/students";
@@ -20,9 +19,9 @@ function Student() {
   const columns = [
     {
       title: "classroom",
-      field: "classroom.name",
+      field: "classroom",
       validate: (rowData) =>
-        rowData.classroom.name === undefined || rowData.classroom.name === ""
+        rowData.classroom === undefined || rowData.classroom === ""
           ? "Required"
           : true,
     },
@@ -55,12 +54,65 @@ function Student() {
     //     rowData.level === undefined || rowData.level === "" ? "Required" : true,
     // },
   ];
-
+  const detailPanel={[
+        {
+          tooltip: 'Show Name',
+          render: rowData => {
+            return (
+              <div
+                style={{
+                  fontSize: 100,
+                  textAlign: 'center',
+                  color: 'white',
+                  backgroundColor: '#43A047',
+                }}
+              >
+                {rowData.name}
+              </div>
+            )
+          },
+        },
+        {
+          icon: 'account_circle',
+          tooltip: 'Show Surname',
+          render: rowData => {
+            return (
+              <div
+                style={{
+                  fontSize: 100,
+                  textAlign: 'center',
+                  color: 'white',
+                  backgroundColor: '#E53935',
+                }}
+              >
+                {rowData.surname}
+              </div>
+            )
+          },
+        },
+        {
+          icon: 'favorite_border',
+          openIcon: 'favorite',
+          tooltip: 'Show Both',
+          render: rowData => {
+            return (
+              <div
+                style={{
+                  fontSize: 100,
+                  textAlign: 'center',
+                  color: 'white',
+                  backgroundColor: '#FDD835',
+                }}
+              >
+                {rowData.name} {rowData.surname}
+              </div>
+            )
+          },
+        },
+      ]}
   return (
-    <div className=" app">
-      <UserHeader />
-      <Container>
-      {/* <Container maxWidth="90%"> */}
+    <section className="relative mt-20">
+      <Container maxWidth="90%">
         {/* <h1 align="center">STUDENTS TABLE</h1> */}
         {/* <h4 align='center'>CRUD operation with Json-Server (with Validation) in Material Table</h4> */}
         <MaterialTable
@@ -119,7 +171,7 @@ function Student() {
           }}
         />
       </Container>
-    </div>
+    </section>
   );
 }
 

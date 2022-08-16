@@ -11,10 +11,10 @@ export default function BackgroundColor() {
           sx={{ bgcolor: "primary.main", color: "primary.contrastText", p: 2 }}
         >
           <Link
-            to="students"
+            to="reset-password"
             className="text-sm font-medium text-blue-600 hover:bg-yellow-400"
           >
-            Students Operations
+            Having trouble signing in?
           </Link>
         </Box>
       </Grid>

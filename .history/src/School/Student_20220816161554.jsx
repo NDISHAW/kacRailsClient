@@ -58,7 +58,6 @@ function Student() {
 
   return (
     <div className=" app">
-      <UserHeader />
       <Container>
       {/* <Container maxWidth="90%"> */}
         {/* <h1 align="center">STUDENTS TABLE</h1> */}

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
@@ -10,12 +9,7 @@ export default function BackgroundColor() {
         <Box
           sx={{ bgcolor: "primary.main", color: "primary.contrastText", p: 2 }}
         >
-          <Link
-            to="students"
-            className="text-sm font-medium text-blue-600 hover:bg-yellow-400"
-          >
-            Students Operations
-          </Link>
+          primary.main
         </Box>
       </Grid>
       <Grid item xs={12} sm={4}>

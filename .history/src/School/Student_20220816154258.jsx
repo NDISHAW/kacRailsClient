@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import MaterialTable from "@material-table/core";
 import Container from "@material-ui/core/Container";
-import UserHeader from '../partials/UserHeader';
 
 function Student() {
   // const url = "https://michegwwe.herokuapp.com/students";
@@ -20,9 +19,9 @@ function Student() {
   const columns = [
     {
       title: "classroom",
-      field: "classroom.name",
+      field: "classroom",
       validate: (rowData) =>
-        rowData.classroom.name === undefined || rowData.classroom.name === ""
+        rowData.classroom === undefined || rowData.classroom === ""
           ? "Required"
           : true,
     },
@@ -55,12 +54,19 @@ function Student() {
     //     rowData.level === undefined || rowData.level === "" ? "Required" : true,
     // },
   ];
-
+  const detailPanel={rowData => {
+        return (
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/C0DPdy98e4c"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
   return (
-    <div className=" app">
-      <UserHeader />
-      <Container>
-      {/* <Container maxWidth="90%"> */}
+    <section className="relative mt-20">
+      <Container maxWidth="90%">
         {/* <h1 align="center">STUDENTS TABLE</h1> */}
         {/* <h4 align='center'>CRUD operation with Json-Server (with Validation) in Material Table</h4> */}
         <MaterialTable
@@ -119,7 +125,7 @@ function Student() {
           }}
         />
       </Container>
-    </div>
+    </section>
   );
 }
 

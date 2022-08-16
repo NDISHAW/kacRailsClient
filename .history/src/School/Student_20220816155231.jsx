@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import MaterialTable from "@material-table/core";
 import Container from "@material-ui/core/Container";
-import UserHeader from '../partials/UserHeader';
 
 function Student() {
   // const url = "https://michegwwe.herokuapp.com/students";
@@ -20,9 +19,9 @@ function Student() {
   const columns = [
     {
       title: "classroom",
-      field: "classroom.name",
+      field: "classroom",
       validate: (rowData) =>
-        rowData.classroom.name === undefined || rowData.classroom.name === ""
+        rowData.classroom === undefined || rowData.classroom === ""
           ? "Required"
           : true,
     },
@@ -57,10 +56,8 @@ function Student() {
   ];
 
   return (
-    <div className=" app">
-      <UserHeader />
-      <Container>
-      {/* <Container maxWidth="90%"> */}
+    <div className="max-w-6xl mt-20">
+      <Container maxWidth="90%">
         {/* <h1 align="center">STUDENTS TABLE</h1> */}
         {/* <h4 align='center'>CRUD operation with Json-Server (with Validation) in Material Table</h4> */}
         <MaterialTable

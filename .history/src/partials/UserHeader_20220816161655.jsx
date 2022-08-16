@@ -24,7 +24,7 @@ function UserHeader() {
           {/* Site branding */}
           <div className="flex-shrink-0 mr-4">
             {/* Logo */}
-            <Link to="/dashboard" className="block" aria-label="Cruip">
+            <Link to="/das" className="block" aria-label="Cruip">
               <svg
                 className="w-8 h-8"
                 viewBox="0 0 32 32"
