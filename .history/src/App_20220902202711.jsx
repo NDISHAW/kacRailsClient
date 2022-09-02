@@ -46,7 +46,7 @@ function App() {
           <UserAuthContextProvider>
             <Routes>
               <Route
-                path="/dashboard"
+                path="/dashbard"
                 element={
                   <ProtectedRoute>
                     <Dashboard />
@@ -56,7 +56,7 @@ function App() {
                 }
               />
               <Route path="/" element={<Home />} />
-              <Route path="/signin" element={<Login />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/home" element={<Home />} />
               <Route path="/student" element={<Student />} />
               {/* <Route path="/Employee" element={<Employee />} />

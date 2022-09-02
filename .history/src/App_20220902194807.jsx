@@ -8,17 +8,16 @@ import { Container, Row, Col } from "react-bootstrap";
 import 'aos/dist/aos.css';
 import './css/style.css';
 import { UserAuthContextProvider } from "./context/UserAuthContext";
-import ProtectedRoute from "./pages/ProtectedRoute"
+import ProtectedRoute from
 import AOS from 'aos';
 
 import Home from './pages/Home';
-import Login from './pages/Login';
+import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ResetPassword from './pages/ResetPassword';
 import Dashboard from './pages/Dashboard';
 import Student from './School/Student';
 import Employee from './School/Employee';
-// import { Dashboard } from 'akar-icons';
 
 function App() {
 
@@ -46,21 +45,21 @@ function App() {
           <UserAuthContextProvider>
             <Routes>
               <Route
-                path="/dashboard"
+                path="/home"
                 element={
                   <ProtectedRoute>
-                    <Dashboard />
+                    <Home />
                     {/* <MTStudet /> */}
                     {/* <Employee /> */}
                   </ProtectedRoute>
                 }
               />
-              <Route path="/" element={<Home />} />
-              <Route path="/signin" element={<Login />} />
+              <Route path="/" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/student" element={<Student />} />
-              {/* <Route path="/Employee" element={<Employee />} />
-              <Route path="/parents" element={<Parents />} /> */}
+              <Route path="/MTStudet" element={<MTStudet />} />
+              <Route path="/Employee" element={<Employee />} />
+              <Route path="/parents" element={<Parents />} />
               parents
             </Routes>
           </UserAuthContextProvider>
@@ -79,6 +78,7 @@ function App() {
     //     <Route path="/employee" element={<Employee />} />
     //   </Routes>
     // </>
+
   );
 }
 

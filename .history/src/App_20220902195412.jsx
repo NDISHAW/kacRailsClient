@@ -12,7 +12,7 @@ import ProtectedRoute from "./pages/ProtectedRoute"
 import AOS from 'aos';
 
 import Home from './pages/Home';
-import Login from './pages/Login';
+import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ResetPassword from './pages/ResetPassword';
 import Dashboard from './pages/Dashboard';
@@ -46,7 +46,7 @@ function App() {
           <UserAuthContextProvider>
             <Routes>
               <Route
-                path="/dashboard"
+                path="/dashbard"
                 element={
                   <ProtectedRoute>
                     <Dashboard />
@@ -56,7 +56,7 @@ function App() {
                 }
               />
               <Route path="/" element={<Home />} />
-              <Route path="/signin" element={<Login />} />
+              <Route path="/signin" element={<SignUp />} />
               <Route path="/home" element={<Home />} />
               <Route path="/student" element={<Student />} />
               {/* <Route path="/Employee" element={<Employee />} />
@@ -79,6 +79,7 @@ function App() {
     //     <Route path="/employee" element={<Employee />} />
     //   </Routes>
     // </>
+
   );
 }
 

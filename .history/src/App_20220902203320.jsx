@@ -46,7 +46,7 @@ function App() {
           <UserAuthContextProvider>
             <Routes>
               <Route
-                path="/dashboard"
+                path="/dashbard"
                 element={
                   <ProtectedRoute>
                     <Dashboard />
@@ -79,6 +79,7 @@ function App() {
     //     <Route path="/employee" element={<Employee />} />
     //   </Routes>
     // </>
+
   );
 }
 

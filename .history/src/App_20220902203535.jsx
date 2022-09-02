@@ -46,7 +46,7 @@ function App() {
           <UserAuthContextProvider>
             <Routes>
               <Route
-                path="/dashboard"
+                path="/dashboardrd"
                 element={
                   <ProtectedRoute>
                     <Dashboard />
