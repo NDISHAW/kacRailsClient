@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { SiShopware } from 'react-icons/si';
 import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-
+import { AiFillHome } from "react-icons/fa";
 import { links } from '../data/dummy';
 import { useStateContext } from "../../../context/ContextProvider";
 
@@ -24,8 +24,12 @@ const Sidebar = () => {
       {activeMenu && (
         <>
           <div className="flex justify-between items-center">
-            <Link to="/dashboard" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
-              <SiShopware /> <span>kibagare Academy Center(CBO)</span>
+            <Link
+              to="/dashboard"
+              onClick={handleCloseSideBar}
+              className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
+            >
+              <AiFillHome /> <span>kibagare Academy Center(CBO)</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
@@ -50,9 +54,11 @@ const Sidebar = () => {
                     key={link.name}
                     onClick={handleCloseSideBar}
                     style={({ isActive }) => ({
-                      backgroundColor: isActive ? currentColor : '',
+                      backgroundColor: isActive ? currentColor : "",
                     })}
-                    className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                    className={({ isActive }) =>
+                      isActive ? activeLink : normalLink
+                    }
                   >
                     {link.icon}
                     <span className="capitalize ">{link.name}</span>

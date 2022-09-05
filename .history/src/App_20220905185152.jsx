@@ -116,7 +116,7 @@ function App() {
                 <Route path="/ecommerce" element={<Ecommerce />} />
 
                 {/* pages  */}
-                <Route path="/students" element={<Student />} />
+                <Route to="/students" element={<Student />} />
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/employees" element={<Employees />} />
                 <Route path="/customers" element={<Customers />} />

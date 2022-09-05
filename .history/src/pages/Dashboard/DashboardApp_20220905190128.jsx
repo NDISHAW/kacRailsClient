@@ -68,8 +68,32 @@ function DashboardApp(){
           <div>
             {themeSettings && <ThemeSettings />}
 
-            
-          </div>
+            {/* dashboard 
+            <Link to="/" element={<Ecommerce />} />
+            <Link to="/dashboard/ecommerce" element={<Ecommerce />} />
+
+            {/* pages  */}
+            <Link to="/orders" element={<Orders />} />
+            <Link to="/students" element={<Student />} />
+            <Link to="/employees" element={<Employees />} />
+            <Link to="/customers" element={<Customers />} />
+
+            {/* apps  */}
+            <Link to="/kanban" element={<Kanban />} />
+            <Link to="/editor" element={<Editor />} />
+            <Link to="/calendar" element={<Calendar />} />
+            <Link to="/color-picker" element={<ColorPicker />} />
+
+            {/* charts  */}
+            <Link to="/line" element={<Line />} />
+            <Link to="/area" element={<Area />} />
+            <Link to="/bar" element={<Bar />} />
+            <Link to="/pie" element={<Pie />} />
+            <Link to="/financial" element={<Financial />} />
+            <Link to="/color-mapping" element={<ColorMapping />} />
+            <Link to="/pyramid" element={<Pyramid />} />
+            <Link to="/stacked" element={<Stacked />} />
+          </div> */}
 
           <Ecommerce />
           <Footer />

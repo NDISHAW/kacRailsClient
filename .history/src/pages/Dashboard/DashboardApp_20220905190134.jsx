@@ -69,7 +69,6 @@ function DashboardApp(){
             {themeSettings && <ThemeSettings />}
 
             
-          </div>
 
           <Ecommerce />
           <Footer />
