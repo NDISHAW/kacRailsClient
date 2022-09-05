@@ -137,7 +137,7 @@ function App() {
                   <Route path="/pyramid" element={<Pyramid />} />
                   <Route path="/stacked" element={<Stacked />} />
                 </Routes>
-              
+              </UserAuthContextProvider>
             </div>
             <Footer />
           </div>
